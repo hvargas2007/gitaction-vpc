@@ -1,4 +1,4 @@
-name: Run Pre-Commit Hooks
+name: Run Pre-Commit
 
 on:
   push:
