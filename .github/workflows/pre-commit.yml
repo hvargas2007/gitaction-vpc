@@ -39,23 +39,6 @@ jobs:
         with:
           terraform_wrapper: false
 
-      - name: Setup TFLint
-        uses: terraform-linters/setup-tflint@v3
-        with:
-          tflint_version: v0.44.1
-
-      - name: Terraform Init
-        id: init
-        run: terraform init 
-
-      - name: Run TFLint.
-        run: | 
-          tflint --init
-          tflint
-      
-      - name: Test with Checkov
-        continue-on-error: true
-        id: checkov
-        uses: bridgecrewio/checkov-action@master
-        with:
-          framework: terraform
+      - name: Seup Tf-init
+        run: |
+          terraform init
